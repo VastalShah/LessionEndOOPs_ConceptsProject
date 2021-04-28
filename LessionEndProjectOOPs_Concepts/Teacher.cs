@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LessionEndProjectOOPs_Concepts
 {
-    class Teacher : Subject, IPerson
+    public class Teacher : Subject, IPerson
     {
         public string Name { get; set; }
         public string ClassAndSection { get; set; }

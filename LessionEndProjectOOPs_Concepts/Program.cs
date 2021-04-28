@@ -7,7 +7,7 @@ namespace LessionEndProjectOOPs_Concepts
     {
         static void Main(string[] args)
         {
-            RainbowSchoolProgram.Do();
+            
         }
     }
 }

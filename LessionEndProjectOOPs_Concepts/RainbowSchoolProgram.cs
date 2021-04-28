@@ -4,35 +4,37 @@ using System.Text;
 
 namespace LessionEndProjectOOPs_Concepts
 {
-    class RainbowSchoolProgram
+    public class RainbowSchoolProgram
     {
-        public static void Do()
+        static List<Student> student1 = new List<Student>();
+        static List<Teacher> teacher1 = new List<Teacher>
         {
-            List<Student> students = new List<Student>();
+            new Teacher() { Name = "Madhu", ClassAndSection = "CSE-B", SubjectCode = 101, SubjectName = "Maths" },
+            new Teacher() { Name = "Amit", ClassAndSection = "CSE-A", SubjectCode = 345, SubjectName = "DBMS" },
+            new Teacher() { Name = "Bibek", ClassAndSection = "CSE-F", SubjectCode = 543, SubjectName = "Data Structures" },
+            new Teacher() { Name = "Mayank", ClassAndSection = "CSE-E", SubjectCode = 222, SubjectName = "DAA" }
+        };
 
-            students.Add(new Student() { Name = "Vatsal", ClassAndSection = "CSE-A" });
-            students.Add(new Student() { Name = "Ajay", ClassAndSection = "CSE-B" });
-            students.Add(new Student() { Name = "Yogesh", ClassAndSection = "CSE-F" });
-            students.Add(new Student() { Name = "Rashi", ClassAndSection = "CSE-E" });
+        public static string AddStudent(Student student)
+        {
+            student1.Add(new Student() { Name = student.Name, ClassAndSection = student.ClassAndSection});
+            return "Data added successfully";
+        }
 
-            Console.WriteLine("\nStudents in a class\n");
-            foreach (Student student in students)
-            {
-                Console.WriteLine(student.GetInfo());
-            }
+        public static List<Student> GetStudentData()
+        {
+            return student1;
+        }
 
-            List<Teacher> teachers = new List<Teacher>();
+        public static string AddTeacher(Teacher teacher)
+        {
+            teacher1.Add(new Teacher() { Name = teacher.Name, ClassAndSection = teacher.ClassAndSection, SubjectCode = teacher.SubjectCode, SubjectName = teacher.SubjectName });
+            return "Added Data Successfully";
+        }
 
-            teachers.Add(new Teacher() { Name = "Madhu", ClassAndSection = "CSE-B", SubjectCode = 101, SubjectName = "Maths" });
-            teachers.Add(new Teacher() { Name = "Amit", ClassAndSection = "CSE-A", SubjectCode = 345, SubjectName = "DBMS" });
-            teachers.Add(new Teacher() { Name = "Bibek", ClassAndSection = "CSE-F", SubjectCode = 543, SubjectName = "Data Structures" });
-            teachers.Add(new Teacher() { Name = "Mayank", ClassAndSection = "CSE-E", SubjectCode = 222, SubjectName = "DAA" });
-
-            Console.WriteLine("\nSubjects taught by a teacher\n");
-            foreach (Teacher teacher in teachers)
-            {
-                Console.WriteLine(teacher.GetInfo());
-            }
+        public static List<Teacher> GetTeacherData()
+        {
+            return teacher1;
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LessionEndProjectOOPs_Concepts
 {
-    class Student : IPerson
+    public class Student : IPerson
     {
         public string Name { get; set; }
 

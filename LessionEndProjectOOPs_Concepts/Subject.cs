@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LessionEndProjectOOPs_Concepts
 {
-    class Subject
+    public class Subject
     {
         public string SubjectName { get; set; }
 
