@@ -34,6 +34,23 @@ namespace LessionEndProjectOOPs_Concepts.Tests
         }
 
         [Test()]
+        public void DeleteStudentTest()
+        {
+            //Arrange
+            Student student = new Student()
+            {
+                Name = "Vatsal",
+                ClassAndSection = "CSE-A"
+            };
+
+            //Act
+            var result = RainbowSchoolProgram.DeleteStudentData(student);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test()]
         public void AddTeacherTest()
         {
             //Arrange

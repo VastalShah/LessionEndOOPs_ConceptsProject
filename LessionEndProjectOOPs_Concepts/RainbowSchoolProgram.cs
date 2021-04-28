@@ -6,7 +6,14 @@ namespace LessionEndProjectOOPs_Concepts
 {
     public class RainbowSchoolProgram
     {
-        static List<Student> student1 = new List<Student>();
+        static List<Student> student1 = new List<Student> 
+        {
+            new Student()
+            {
+                Name = "Vatsal",
+                ClassAndSection = "CSE-A"
+            }
+        };
         static List<Teacher> teacher1 = new List<Teacher>
         {
             new Teacher() { Name = "Madhu", ClassAndSection = "CSE-B", SubjectCode = 101, SubjectName = "Maths" },
@@ -24,6 +31,17 @@ namespace LessionEndProjectOOPs_Concepts
         public static List<Student> GetStudentData()
         {
             return student1;
+        }
+
+        public static bool DeleteStudentData(Student student)
+        {
+            var removeSuccess = false;
+            var findStudent = student1.Find(s => s.Name == student.Name);
+            if (findStudent != null)
+            {
+                removeSuccess = student1.Remove(findStudent);
+            }
+            return removeSuccess;
         }
 
         public static string AddTeacher(Teacher teacher)
